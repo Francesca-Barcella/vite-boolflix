@@ -15,16 +15,18 @@ export default {
 
   data() {
     return {
-      store: store
+      store: store,
+      movie: 'tomb raider'
     }
   },
 
   methods: {
-    callApi(url) {
+    callApi() {
 
-      axios.get(url)
+      axios.get(this.store.url)
         .then(response => {
           console.log(response.data);
+        
 
         })
 
@@ -35,7 +37,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.callApi);
+    this.callApi();
   }
 }
 </script>

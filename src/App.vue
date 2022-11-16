@@ -1,35 +1,52 @@
 <script >
-import axios from 'axios'
-import { store } from './store.js'
+/* import axios from 'axios'
+import { store } from './store.js' */
+import SiteHeader from './components/SiteHeader.vue'
+import SiteMain from './components/SiteMain.vue'
+import SiteFooter from './components/SiteFooter.vue'
 
-export default{
-  name:'App',
-  data (){
-    return{
+export default {
+  name: 'App',
+  components: {
+    SiteHeader,
+    SiteMain,
+    SiteFooter
+  },
+
+ /*  data() {
+    return {
       store
     }
   },
 
-  methods:{
-    callApi(){
+  methods: {
+    callApi() {
 
       axios.get(url)
-      .then(response => {
-        console.log(response.data);
-      })
+        .then(response => {
+          console.log(response.data);
+        })
 
-      .catch(err => {
-        console.log(err.message);
-      })
+        .catch(err => {
+          console.log(err.message);
+        })
     }
-  }
+  },
 
+  mounted() {
+    console.log(this.callApi);
+  } */
 }
 </script>
 
 <template>
 
+  <SiteHeader></SiteHeader>
+  <SiteMain></SiteMain>
+  <SiteFooter></SiteFooter>
+
 </template>
 
 <style lang="scss" scoped>
+
 </style>

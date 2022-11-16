@@ -1,6 +1,6 @@
 <script >
-/* import axios from 'axios'
-import { store } from './store.js' */
+import axios from 'axios'
+import { store } from './store.js'
 import SiteHeader from './components/SiteHeader.vue'
 import SiteMain from './components/SiteMain.vue'
 import SiteFooter from './components/SiteFooter.vue'
@@ -13,18 +13,19 @@ export default {
     SiteFooter
   },
 
- /*  data() {
+  data() {
     return {
-      store
+      store: store
     }
   },
 
   methods: {
-    callApi() {
+    callApi(url) {
 
       axios.get(url)
         .then(response => {
           console.log(response.data);
+
         })
 
         .catch(err => {
@@ -35,7 +36,7 @@ export default {
 
   mounted() {
     console.log(this.callApi);
-  } */
+  }
 }
 </script>
 

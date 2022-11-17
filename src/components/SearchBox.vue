@@ -1,6 +1,5 @@
 <script>
 import { store } from '../store.js'
-import axios from 'axios';
 
 export default {
   name: 'SearchBox',
@@ -9,36 +8,15 @@ export default {
       store
     }
   },
-  methods: {
-    callApi() {
-      axios(store.config)
-        .then(response => {
-          console.log(response.data)
-          this.store.results = response.data
-        })
-
-        .catch(err => {
-          console.log(err.message)
-          this.store.error = err.message
-        })
-    }
-  }
 }
-
 </script>
 
 <template>
-    <div class="search-box">
-      <input type="search" v-model="store.config.params.query" @keyup.enter="callApi">
-      <button @click="callApi" >Search</button>
-    </div>
-
-    <!-- faccio il v-for qui per stampare e poi lo sposterò nel componente giusto -->
-    
-    <ul v-for="movie in store.results.results">
-      <li>{{movie.title}}</li>
-    </ul>
-
+  <div class="search-box">
+    <!-- nel figlio aggiungo $emit per dire che andrà ascoltato - ESEMPIO - <button @click="$emit('someEvent')">click me</button> -->
+    <input type="search" v-model="store.config.params.query" @keyup.enter="$emit('filterMovies')">
+    <button @click="$emit('filterMovies')">Search</button>
+  </div>
 </template>
 
 <style lang="scss" scoped>

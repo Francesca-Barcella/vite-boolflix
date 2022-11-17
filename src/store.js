@@ -15,6 +15,8 @@ export const store = reactive({
             api_key: 'a3a7406bba95703d01d22d9638cfdcfe',
             query: ''
         }
-    }
+    },
 
+    results: null,
+    error: false
 })

@@ -1,7 +1,8 @@
 import { reactive } from 'vue'
+import axios from 'axios'
 
 export const store = reactive({
-        config: {
+    config: {
         method: 'GET',
         url: 'https://api.themoviedb.org/3/search/movie',
         params: {
@@ -11,5 +12,19 @@ export const store = reactive({
     },
 
     results: [],
-    error: false
+    error: false,
+
+    callApi() {
+        axios(store.config)
+            .then(response => {
+                console.log(response.data)
+                store.results = response.data.results;
+            })
+
+            .catch(err => {
+                console.log(err.message)
+                store.error = err.message
+            })
+
+    }
 })

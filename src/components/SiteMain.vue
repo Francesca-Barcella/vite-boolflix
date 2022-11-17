@@ -14,7 +14,10 @@ export default {
 <template>
   <main>
     <h1>boolflix MAIN</h1>
+
+
     <!-- faccio il v-for qui per stampare e poi lo sposterò nel componente giusto -->
+
     <ul>
       <li v-for="movie in store.results">
         {{ movie.title }}
@@ -23,6 +26,7 @@ export default {
         {{ movie.vote_average }}
       </li>
     </ul>
+
   </main>
 </template>
 

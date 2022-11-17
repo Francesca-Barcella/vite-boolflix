@@ -3,12 +3,21 @@ import { store } from '../store.js'
 
 export default {
   name: 'SearchBox',
+  /* emits: ['filterMovies'], */
   data() {
     return {
       store
     }
   },
+
+  methods: {
+    submit() {
+      this.$emit('filterMovies')
+    }
+  }
 }
+
+
 </script>
 
 <template>

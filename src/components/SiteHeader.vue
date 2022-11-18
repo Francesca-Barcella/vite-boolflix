@@ -11,8 +11,7 @@ export default {
     return {
       store
     }
-  },
-
+  }
 }
 
 </script>
@@ -20,7 +19,7 @@ export default {
 <template>
   <header>
     <h1>boolflix HEADER</h1>
-    <!-- nel genitore devo ascoltare - ESEMPIO <MyComponent @some-event="callback"  === nome evento il primo e nome della chimata ajax il secondo/> -->
+    <!-- nel genitore devo ascoltare - ESEMPIO <MyComponent @nome-evento="nome-chiamata" /> -->
     <SearchBox @filterMovies="store.callApi" />
   </header>
 </template>

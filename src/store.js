@@ -22,7 +22,9 @@ export const store = reactive({
         }
     },
 
-    results: [],
+    resultsMovie: [],
+    resultsTv: [],
+
     error: false,
 
     callApi() {
@@ -30,19 +32,19 @@ export const store = reactive({
         axios(store.configMovie)
             .then(response => {
                 console.log(response.data)
-                store.results = response.data.results;
+                store.resultsMovie = response.data.results;
             })
 
             .catch(err => {
                 console.log(err.message)
                 store.error = err.message
             })
-            
+
         //section tv
         axios(store.configTv)
             .then(response => {
                 console.log(response.data)
-                store.results = response.data.results;
+                store.resultsTv = response.data.results;
             })
 
             .catch(err => {
